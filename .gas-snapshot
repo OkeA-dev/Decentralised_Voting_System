@@ -1,0 +1,3 @@
+TestVotingSystem:testCanNotVoteTwice() (gas: 63115)
+TestVotingSystem:testIsOwner() (gas: 14730)
+TestVotingSystem:testOnlyOwnerCanAddCandidate() (gas: 14331)

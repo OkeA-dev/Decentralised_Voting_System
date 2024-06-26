@@ -97,4 +97,8 @@ contract Voting {
     function checkVoterVote(address _voter) public view returns (bool) {
         return voters[_voter];
     }
+
+    function getNumberOfCandidate() public view returns (uint256) {
+        return candidates.length;
+    }
 }
