@@ -23,5 +23,22 @@ contract InteractionTest is Test {
         
     }
 
-    function testVoteForCandidat
+    function testvoteForCandidateInVoting() public {
+        VoteForCandidateToVotingSystem voteForCandidateToVotingSystem = new VoteForCandidateToVotingSystem();
+        voteForCandidateToVotingSystem.voteForCandidateInVoting(address(voting));
+
+        assertEq(voting.getVotingStatus(), true);
+
+        
+    }
+
+    function testvoteForCandidateInVotingNotTwice() public {
+        VoteForCandidateToVotingSystem voteForCandidateToVotingSystem = new VoteForCandidateToVotingSystem();
+        voteForCandidateToVotingSystem.voteForCandidateInVoting(address(voting));
+
+        vm.expectRevert();
+        voteForCandidateToVotingSystem.voteForCandidateInVoting(address(voting));
+
+
+    }
 }
